@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Amazom Login Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="parent-class">
+            <div class="branding-logo">
+             <a href=" "> <img src="https://www.nicepng.com/png/detail/786-7864433_amazon-india-prevents-it-burnout-and-collects-business.png" alt=""> </a>
+            </div>
+          <!--   ...................... -->
+            <div class="table-form">
+                <h1>Create account</h1>
+              <form action="" method="get" class="details" >
+                <div>
+                  <label for="name" id="lab1" >Your Name</label><br>
+                  <input type="text" name="name" id="name" class="name1" required>
+                </div>
+                <div class='nameerr' id='nameer'></div>
+
+
+                <div class="mt-top">
+                  <label for="email" class="lab2" >Email</label><br>
+                  <input type="email" name="email" id="email" class="name1" required>
+                </div>
+                
+                
+                <div class="mt-top">
+                  <label for="name" class="lab2" >Password</label><br>
+                  <input type="password" name="name" id="password" class="name1" required>
+                </div>
+                <div class="pErr" id="pEr"></div>
+
+                 <div class="mt-top">
+                  <label for="name" class="lab2" >Password again</label><br>
+                  <input type="password" name="name" id="repassword" class="name1" required>
+                </div>
+                
+                <div class="mt-top">
+          <!--         <label for="name" id="lab3">continue</label><br> -->
+                  <button onclick ='store()' class="submit-btn" >Submit</button>
+                </div>
+              </form> 
+                <!-- <div class="last">
+                  Already have an account? <a href=" ">Sign in </a><br>
+                    Buying for work? <a href=" "> Create a free business account.</a>
+                 </div>                                              -->
+            </div>
+            
+          </div>
+    </body>
+</html>
+
+<script>
+     function store()
+     {
+       var arr=[]
+       var name = document.getElementById('name');
+       var email = document.getElementById('email');
+       var password = document.getElementById('password');
+
+       if(name.value.length<10){
+        const name_err=document.getElementById('nameer');
+        name_err.textContent="please enter a valid name";
+        setTimeout(()=>{
+          name_err.textContent="";
+        },20000)
+
+        if(password.value.length<5)
+        {
+          const password_error = document.getElementById('pEr');
+          password_error.textContent = "Please Enter a Valid Password";
+          setTimeout(() =>{
+            password_error.textContent="";
+          },20000)
+        }
+
+       }
+        arr.push(name.value)
+        arr.push(email.value)
+        arr.push(password.value)
+        console.log(arr)
+     }
+</script>>
